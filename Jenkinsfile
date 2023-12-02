@@ -12,6 +12,7 @@ pipeline {
     stage('Checkout Source') {
       steps {
         git 'https://github.com/mgsgoms/Docker-Project.git'
+        branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Revs-devops-2023/Docker-Project/']]
       }
     }
 
