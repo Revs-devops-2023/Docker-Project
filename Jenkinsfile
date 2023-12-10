@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    registry = "10.138.0.3:5001/mgsgoms/flask"
-    registry_mysql = "10.138.0.3:5001/mgsgoms/mysql"
+    registry = "revathidevops2023/flask"
+    registry_mysql = "revathidevops2023/mysql"
     dockerImage = ""
   }
 
@@ -42,8 +42,8 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-       sh 'docker build -t "10.138.0.3:5001/mgsgoms/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "10.138.0.3:5001/mgsgoms/mysql:$BUILD_NUMBER"'
+       sh 'docker build -t "revathidevops2023/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "revathidevops2023/mysql:$BUILD_NUMBER"'
         }
       }
     stage('Deploy App') {
